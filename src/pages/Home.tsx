@@ -1,43 +1,16 @@
-
 import React from 'react';
 import { ArrowRight, Brain, PieChart, Server, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import MainLayout from '@/layouts/MainLayout';
 import Hero from '@/components/Hero';
-import ServiceCard from '@/components/ServiceCard';
+import Solutions from '@/components/Solutions';
+import Partners from '@/components/Partners';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import ContactForm from '@/components/ContactForm';
 import BlurImage from '@/components/BlurImage';
 
 const Home: React.FC = () => {
-  const services = [
-    {
-      title: 'AI Consulting',
-      description: 'Strategic guidance on implementing AI solutions that drive business value and innovation.',
-      icon: <Brain size={40} />,
-      link: '/services/ai-consulting',
-    },
-    {
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable insights with our advanced analytics solutions.',
-      icon: <PieChart size={40} />,
-      link: '/services/data-analytics',
-    },
-    {
-      title: 'ML Engineering',
-      description: 'End-to-end machine learning solutions from concept to deployment and monitoring.',
-      icon: <Server size={40} />,
-      link: '/services/ml-engineering',
-    },
-    {
-      title: 'AI Security',
-      description: 'Protect your AI systems and data with our comprehensive security solutions.',
-      icon: <Shield size={40} />,
-      link: '/services/ai-security',
-    },
-  ];
-
   const caseStudies = [
     {
       id: 'retail-transformation',
@@ -72,34 +45,15 @@ const Home: React.FC = () => {
         title="Transforming Business with Intelligent AI Solutions"
         subtitle="We help organizations harness the power of artificial intelligence to solve complex problems and drive innovation."
         ctaText="Explore Solutions"
-        ctaLink="/#solutions"
+        ctaLink="#solutions"
         secondaryCtaText="Contact Us"
         secondaryCtaLink="/contact"
         isHomepage
       />
 
-      {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="section-container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="mb-4">Our Services</h2>
-            <p className="text-gray-600 text-lg">
-              Comprehensive AI services designed to deliver tangible business results and competitive advantage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-                link={service.link}
-              />
-            ))}
-          </div>
-        </div>
+      {/* Solutions Section */}
+      <section id="solutions">
+        <Solutions />
       </section>
 
       {/* About CT Nova Section */}
@@ -192,6 +146,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <Partners />
 
       {/* Contact Section */}
       <section className="py-20 bg-brand-accent">
