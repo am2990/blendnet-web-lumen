@@ -57,14 +57,51 @@ const Hero: React.FC<HeroProps> = ({
           </svg>
         </div>
         
-        {/* Animated Particles/Nodes (AI Network) */}
-        <div className="hidden lg:block absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-brand-primary rounded-full animate-ping opacity-75" style={{animationDuration: '3s'}}></div>
-          <div className="absolute top-1/3 left-1/2 w-3 h-3 bg-brand-secondary rounded-full animate-ping opacity-75" style={{animationDuration: '2.7s'}}></div>
-          <div className="absolute top-2/3 left-1/3 w-2 h-2 bg-brand-primary rounded-full animate-ping opacity-75" style={{animationDuration: '3.5s'}}></div>
-          <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-brand-secondary rounded-full animate-ping opacity-75" style={{animationDuration: '2.3s'}}></div>
-          <div className="absolute top-3/4 left-1/4 w-2 h-2 bg-brand-primary rounded-full animate-ping opacity-75" style={{animationDuration: '4s'}}></div>
-          <div className="absolute top-1/4 left-2/3 w-3 h-3 bg-brand-secondary rounded-full animate-ping opacity-75" style={{animationDuration: '3.8s'}}></div>
+        {/* AI Network Visualization */}
+        <div className="absolute inset-0">
+          {/* Network nodes */}
+          <div className="hidden lg:block">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div 
+                key={i}
+                className="absolute w-2 h-2 bg-brand-primary rounded-full"
+                style={{
+                  top: `${20 + Math.random() * 60}%`,
+                  left: `${10 + Math.random() * 80}%`,
+                  opacity: 0.6 + Math.random() * 0.4,
+                  animation: `pulse-grow ${3 + Math.random() * 4}s infinite alternate`
+                }}
+              />
+            ))}
+            
+            {/* Neural network lines */}
+            <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+              <line x1="20%" y1="30%" x2="40%" y2="50%" stroke="#4A86E8" strokeWidth="1" />
+              <line x1="40%" y1="50%" x2="60%" y2="30%" stroke="#4A86E8" strokeWidth="1" />
+              <line x1="60%" y1="30%" x2="80%" y2="40%" stroke="#4A86E8" strokeWidth="1" />
+              <line x1="30%" y1="60%" x2="50%" y2="70%" stroke="#61D095" strokeWidth="1" />
+              <line x1="50%" y1="70%" x2="70%" y2="60%" stroke="#61D095" strokeWidth="1" />
+              <line x1="40%" y1="50%" x2="50%" y2="70%" stroke="#4A86E8" strokeWidth="1" />
+              <line x1="60%" y1="30%" x2="70%" y2="60%" stroke="#4A86E8" strokeWidth="1" />
+            </svg>
+            
+            {/* Floating data visualization elements */}
+            <div className="absolute top-1/4 right-1/4 w-24 h-16 opacity-10 animate-[float_8s_ease-in-out_infinite]">
+              <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="15" height="40" fill="#4A86E8" />
+                <rect x="30" y="20" width="15" height="30" fill="#4A86E8" />
+                <rect x="50" y="15" width="15" height="35" fill="#4A86E8" />
+                <rect x="70" y="5" width="15" height="45" fill="#4A86E8" />
+              </svg>
+            </div>
+            
+            <div className="absolute bottom-1/3 left-1/3 w-32 h-32 opacity-10 animate-[float_10s_ease-in-out_infinite_alternate]">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#61D095" strokeWidth="2" />
+                <path d="M20,50 Q50,20 80,50 Q50,80 20,50" fill="none" stroke="#61D095" strokeWidth="2" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -92,7 +129,7 @@ const Hero: React.FC<HeroProps> = ({
         </svg>
       </div>
       
-      {/* Showcase Images */}
+      {/* Showcase Images - Moved from top-left to bottom-right and mid-right */}
       <div className="absolute -bottom-10 -right-20 w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-xl hidden lg:block opacity-60 transform rotate-12 z-0">
         <img 
           src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
@@ -100,7 +137,7 @@ const Hero: React.FC<HeroProps> = ({
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl hidden lg:block opacity-50 z-0">
+      <div className="absolute top-1/3 right-10 w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl hidden lg:block opacity-50 z-0">
         <img 
           src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb" 
           alt="Cloud Deployment" 
