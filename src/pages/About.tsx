@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,34 +9,40 @@ import TeamMember from '@/components/TeamMember';
 const About: React.FC = () => {
   const teamMembers = [
     {
-      name: 'Alex Johnson',
-      role: 'CEO & Founder',
-      bio: 'With over 15 years of experience in AI and machine learning, Alex founded BlendNet to help organizations leverage the power of artificial intelligence.',
-      imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-      },
+      "name": "Apurv Mehra",
+      "role": "Co-founder and CEO",
+      "bio": "Apurv Mehra is the Co-founder and CEO of Blendnet.ai, a company specializing in AI solutions. He has also worked with ChildFund India to design a blockchain-based solution for streamlining operations.",
+      "imageUrl": "/images/team/Apurv_Photo.jpeg",
+      "socialLinks": {
+        "linkedin": "https://in.linkedin.com/in/apurvmehra"
+      }
     },
     {
-      name: 'Sarah Chen',
-      role: 'CTO',
-      bio: 'Sarah leads our technical team, bringing 12 years of experience in developing cutting-edge AI solutions for enterprise clients.',
-      imageUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        github: 'https://github.com',
-      },
+      "name": "Kashish Mittal",
+      "role": "Co-founder and COO",
+      "bio": "Kashish Mittal is a Principal Research Program Manager in the Technology for Emerging Markets group at Microsoft Research India. His work focuses on designing citizen-scale technologies, particularly developing Digital Public Good platforms using AI for large-scale societal impact. Prior to joining Microsoft, Kashish served as an Indian Administrative Service (IAS) officer, leading tech-driven developmental initiatives in India. He holds a B.Tech in Computer Science from IIT Delhi and is also a noted Indian Classical Vocalist.",
+      "imageUrl": "/images/team/Kashish_Photo.jpeg",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/kashishmittalias"
+      }
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Head of AI Research',
-      bio: 'Michael oversees our AI research initiatives, focusing on developing innovative solutions that push the boundaries of what\'s possible.',
-      imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-      },
+      "name": "John Huddle",
+      "role": "Co-founder and Head of BD",
+      "bio": "John Huddle is the Director of Market Development for APAC at SES Video, working with broadcasters and platform operators to embrace scalable and innovative broadcast solutions.",
+      "imageUrl": "/images/team/John_Photo.png",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/john-huddle"
+      }
+    },
+    {
+      "name": "Sanchit Sharma",
+      "role": "Co-founder and CTO",
+      "bio": "Sanchit Sharma served as the first employee at Zenatix, an IoT startup acquired by Hero Electronix in 2018. He played a pivotal role in developing and maintaining IoT applications and cloud data pipelines.",
+      "imageUrl": "/images/team/Sanchit_Photo.png",
+      "socialLinks": {
+        "linkedin": "https://in.linkedin.com/in/sanchitsharma98"
+      }
     },
     {
       name: 'Emily Barnes',
@@ -46,16 +51,6 @@ const About: React.FC = () => {
       imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-      },
-    },
-    {
-      name: 'David Kim',
-      role: 'Lead Data Scientist',
-      bio: 'David brings expertise in advanced analytics and machine learning models that turn complex data into actionable insights for our clients.',
-      imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        github: 'https://github.com',
       },
     },
     {
@@ -72,34 +67,34 @@ const About: React.FC = () => {
 
   const timeline = [
     {
-      year: '2018',
-      title: 'Founded',
-      description: 'BlendNet was founded with the mission to make AI accessible to organizations of all sizes.',
-    },
-    {
-      year: '2019',
-      title: 'First Enterprise Client',
-      description: 'Secured our first enterprise client, a Fortune 500 company looking to transform their data strategy.',
-    },
-    {
-      year: '2020',
-      title: 'Research Partnership',
-      description: 'Established a research partnership with Stanford University to advance AI capabilities.',
-    },
-    {
-      year: '2021',
-      title: 'CT Nova Launch',
-      description: 'Launched our flagship product, CT Nova, bringing AI-enhanced learning to organizations globally.',
-    },
-    {
       year: '2022',
-      title: 'International Expansion',
-      description: 'Opened offices in London and Singapore, expanding our global presence.',
+      title: 'Founded',
+      description: 'Blended was founded as a spin-off from Microsoft Research and SES Technologies, embarking on a mission to leverage cutting-edge AI, ML, and satellite technology.',
     },
     {
       year: '2023',
-      title: 'AI Excellence Award',
-      description: 'Received the AI Excellence Award for our innovative solutions and client results.',
+      title: 'Satellite Deployments',
+      description: 'Achieved large-scale deployments of satellite-based content distribution across several states in India.',
+    },
+    {
+      year: '2023',
+      title: 'AI at Edge Research',
+      description: 'Entered research partnerships with Microsoft Research focused on advancing AI at the Edge.',
+    },
+    {
+      year: '2023',
+      title: 'Innovative Projects',
+      description: 'Collaborated with organizations like iDream, Education, EarthCare Foundation, and Know Thy Choice on innovative projects.',
+    },
+    {
+      year: '2024',
+      title: 'AI Agents and Skilling',
+      description: 'Began working on AI agents and AI skilling initiatives, conducting pilots with educational organizations such as BITS Pilani, IIIT Delhi, and IITs.',
+    },
+    {
+      year: '2025',
+      title: 'CT Nova Launch',
+      description: 'Launched Citinova in partnership with Microsoft Community Training, marking a major milestone in our journey.',
     },
   ];
 
@@ -119,13 +114,13 @@ const About: React.FC = () => {
               <h2 className="mb-6">Our Story</h2>
               <div className="space-y-4">
                 <p className="text-gray-600 text-lg">
-                  BlendNet was founded in 2018 with a clear vision: to make the power of artificial intelligence accessible and actionable for organizations of all sizes. We recognized that while AI technology was advancing rapidly, many organizations struggled to implement effective solutions that delivered real business value.
+                  Blendnet AI was founded in 2022 as a spin-off from Microsoft Research and SES Technologies, driven by a mission to work at the cutting edge of generative AI and LLM technologies. Our vision is to empower businesses and drive growth in learning and development, education, and skilling through innovative AI solutions.
                 </p>
                 <p className="text-gray-600 text-lg">
                   Our team of AI experts, data scientists, and business consultants set out to bridge this gap, creating solutions that combine cutting-edge technology with practical application. We believe that AI should not just be a buzzword, but a transformative force that helps organizations solve real problems and achieve measurable results.
                 </p>
                 <p className="text-gray-600 text-lg">
-                  Today, BlendNet works with clients across industries, from Fortune 500 companies to innovative startups, helping them harness the power of AI to drive innovation, improve efficiency, and create competitive advantage.
+                  Today, BlendNet AI works with clients across industries, from Fortune 500 companies to innovative startups, helping them harness the power of AI to drive innovation, improve efficiency, and create competitive advantage.
                 </p>
               </div>
 
