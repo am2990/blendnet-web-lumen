@@ -33,26 +33,26 @@ const Hero: React.FC<HeroProps> = ({
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/90 to-brand-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/70" />
         </div>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary to-brand-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-accent to-white" />
       )}
       
       {/* Content */}
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className={`text-white ${isHomepage ? 'text-display-large' : ''} font-bold animate-slide-up`}>
+          <h1 className={`text-brand-primary ${isHomepage ? 'text-display-large' : ''} font-bold animate-slide-up`}>
             {title}
           </h1>
-          <p className="mt-6 text-white/90 text-xl animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
+          <p className="mt-6 text-gray-600 text-xl animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
             {subtitle}
           </p>
           
           {(ctaText || secondaryCtaText) && (
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up opacity-0" style={{ animationDelay: '0.4s' }}>
               {ctaText && (
-                <Button asChild className="bg-white text-brand-primary hover:bg-white/90">
+                <Button asChild className="bg-brand-primary hover:bg-brand-primary/90">
                   <Link to={ctaLink}>
                     {ctaText}
                   </Link>
@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({
               )}
               
               {secondaryCtaText && (
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+                <Button asChild variant="outline" className="border-brand-primary text-brand-primary hover:bg-brand-primary/10">
                   <Link to={secondaryCtaLink}>
                     {secondaryCtaText}
                   </Link>

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Brand Colors
+				// Brand Colors - Updated to lighter palette
 				brand: {
-					primary: "#0A2342",
-					secondary: "#2CA6A4",
-					accent: "#F2F4F8",
+					primary: "#4A86E8", // Lighter blue
+					secondary: "#61D095", // Softer green
+					accent: "#F9F9F9", // Very light gray
 				}
 			},
 			borderRadius: {
