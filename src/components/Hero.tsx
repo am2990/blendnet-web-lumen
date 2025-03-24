@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -35,62 +36,49 @@ const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <div className={`relative ${isHomepage ? 'min-h-screen' : 'min-h-[50vh]'} flex items-center overflow-hidden bg-gradient-to-br from-brand-primary/5 to-brand-accent/5`}>
-      {/* Animated Wave Background */}
+    <div className={`relative ${isHomepage ? 'min-h-screen' : 'min-h-[50vh]'} flex items-center overflow-hidden bg-gradient-to-br from-white to-brand-accent/5`}>
+      {/* Background Grid Animation */}
       <div className="absolute inset-0 z-0">
-        {/* First wave */}
-        <div className="absolute inset-0">
-          <svg 
-            className="absolute w-full h-full" 
-            viewBox="0 0 1440 320" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ 
-              animation: 'wave 35s linear infinite',
-              opacity: 0.15
-            }}
-          >
-            <path 
-              fill="var(--brand-primary)"
-              d="M0,160L34.3,165.3C68.6,171,137,181,206,165.3C274.3,149,343,107,411,96C480,85,549,107,617,128C685.7,149,754,171,823,165.3C891.4,160,960,128,1029,117.3C1097.1,107,1166,117,1234,122.7C1302.9,128,1371,128,1406,128L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
-
-        {/* Second wave */}
-        <div className="absolute inset-0">
-          <svg 
-            className="absolute w-full h-full" 
-            viewBox="0 0 1440 320" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ 
-              animation: 'wave 25s linear infinite',
-              opacity: 0.1
-            }}
-          >
-            <path 
-              fill="var(--brand-accent)"
-              d="M0,224L34.3,213.3C68.6,203,137,181,206,186.7C274.3,192,343,224,411,224C480,224,549,192,617,181.3C685.7,171,754,181,823,192C891.4,203,960,213,1029,213.3C1097.1,213,1166,203,1234,186.7C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
-
-        {/* Third wave */}
-        <div className="absolute inset-0">
-          <svg 
-            className="absolute w-full h-full" 
-            viewBox="0 0 1440 320" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ 
-              animation: 'wave 30s linear infinite',
-              opacity: 0.05
-            }}
-          >
-            <path 
-              fill="var(--brand-primary)"
-              d="M0,96L34.3,106.7C68.6,117,137,139,206,149.3C274.3,160,343,160,411,144C480,128,549,96,617,80C685.7,64,754,64,823,80C891.4,96,960,128,1029,144C1097.1,160,1166,160,1234,149.3C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
+        <div className="grid-background"></div>
+      </div>
+      
+      {/* Animated Particles */}
+      <div className="absolute inset-0 z-0 opacity-60">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
+      
+      {/* Abstract geometric shapes */}
+      <div className="absolute right-0 bottom-0 z-0 opacity-20">
+        <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="geometric-shape">
+          <path fill="var(--brand-primary)" d="M49.2,-61.6C62.9,-51.3,72.7,-34.7,76.1,-16.8C79.5,1.1,76.5,20.4,67.1,35.1C57.7,49.8,41.8,59.9,24.4,66.2C7,72.6,-11.8,75.2,-29.6,70.3C-47.5,65.4,-64.4,53.1,-72.7,36.2C-81,19.3,-80.6,-2.2,-73.1,-19.3C-65.6,-36.4,-51,-48.9,-36.1,-58.7C-21.1,-68.4,-5.9,-75.4,8.6,-85.4C23.2,-95.4,35.6,-71.8,49.2,-61.6Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+      
+      <div className="absolute left-5 bottom-5 z-0 opacity-20">
+        <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="geometric-shape-alt">
+          <path fill="var(--brand-secondary)" d="M45.3,-53.4C58.9,-40.7,70.3,-25.3,73.8,-7.8C77.3,9.8,72.8,29.4,61.5,43.2C50.2,57,32,64.8,13.3,67.5C-5.5,70.2,-24.8,67.7,-39.1,58.1C-53.4,48.5,-62.7,31.8,-68.4,12.6C-74.1,-6.7,-76.2,-28.5,-66.9,-43.9C-57.5,-59.2,-36.7,-68,-17.1,-68.9C2.6,-69.9,31.7,-66.1,45.3,-53.4Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+      
+      {/* Tech images in background */}
+      <div className="absolute z-0 right-10 top-1/4 opacity-40 transform rotate-6">
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+          alt="Tech Professional" 
+          className="w-72 h-auto rounded-lg shadow-xl tech-image"
+        />
+      </div>
+      
+      <div className="absolute z-0 left-10 bottom-20 opacity-30 transform -rotate-3">
+        <img 
+          src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" 
+          alt="Modern Technology" 
+          className="w-64 h-auto rounded-lg shadow-xl tech-image-alt"
+        />
       </div>
 
       {/* Content */}
@@ -150,6 +138,119 @@ const Hero: React.FC<HeroProps> = ({
           100% {
             transform: translateX(-100%) scaleY(1);
           }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.7;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.9;
+          }
+        }
+        
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .grid-background {
+          position: absolute;
+          width: 200%;
+          height: 200%;
+          background-image: linear-gradient(rgba(65, 132, 247, 0.05) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(65, 132, 247, 0.05) 1px, transparent 1px);
+          background-size: 40px 40px;
+          animation: pulse 15s ease-in-out infinite;
+        }
+        
+        .particle {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: linear-gradient(145deg, rgba(65, 132, 247, 0.4), rgba(65, 84, 247, 0.1));
+          animation: float 15s infinite;
+          opacity: 0.3;
+        }
+        
+        .particle:nth-child(1) {
+          top: 20%;
+          left: 10%;
+          width: 80px;
+          height: 80px;
+          animation-duration: 22s;
+          animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+          top: 70%;
+          left: 30%;
+          width: 60px;
+          height: 60px;
+          animation-duration: 18s;
+          animation-delay: 1s;
+        }
+        
+        .particle:nth-child(3) {
+          top: 40%;
+          right: 15%;
+          width: 70px;
+          height: 70px;
+          animation-duration: 25s;
+          animation-delay: 2s;
+        }
+        
+        .particle:nth-child(4) {
+          top: 80%;
+          right: 25%;
+          width: 50px;
+          height: 50px;
+          animation-duration: 20s;
+          animation-delay: 0.5s;
+        }
+        
+        .particle:nth-child(5) {
+          top: 10%;
+          right: 40%;
+          width: 90px;
+          height: 90px;
+          animation-duration: 24s;
+          animation-delay: 1.5s;
+        }
+        
+        .geometric-shape {
+          animation: rotate 30s linear infinite;
+        }
+        
+        .geometric-shape-alt {
+          animation: rotate 40s linear infinite reverse;
+        }
+        
+        .tech-image {
+          animation: float 20s ease-in-out infinite;
+          filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+        }
+        
+        .tech-image-alt {
+          animation: float 25s ease-in-out infinite;
+          animation-delay: 5s;
+          filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
         }
       `}</style>
     </div>

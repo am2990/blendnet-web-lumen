@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -30,18 +31,28 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Solutions', path: '/#solutions' },
+    { name: 'Solutions', path: location.pathname === '/' ? '/#solutions' : '/solutions' },
     { name: 'CT-Nova', path: '/ct-nova' },
     { name: 'Case Studies', path: '/case-studies' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.startsWith('/#')) {
+      e.preventDefault();
+      const element = document.querySelector(path.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const isActive = (path: string) => {
     if (path === '/') {
       return location.pathname === '/' ? 'text-brand-secondary' : '';
     }
-    return location.pathname.includes(path) ? 'text-brand-secondary' : '';
+    return location.pathname.includes(path.split('#')[0]) ? 'text-brand-secondary' : '';
   };
 
   return (
@@ -57,6 +68,7 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-medium hover:text-brand-secondary transition-colors ${isActive(link.path)}`}
+                onClick={(e) => handleNavClick(e, link.path)}
               >
                 {link.name}
               </Link>
@@ -86,6 +98,7 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 to={link.path}
                 className={`block text-base font-medium hover:text-brand-secondary transition-colors ${isActive(link.path)}`}
+                onClick={(e) => handleNavClick(e, link.path)}
               >
                 {link.name}
               </Link>

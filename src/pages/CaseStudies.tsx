@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import Hero from '@/components/Hero';
 import CaseStudyCard from '@/components/CaseStudyCard';
 
 const CaseStudies: React.FC = () => {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  
   const caseStudies = [
     {
       id: 'retail-transformation',
@@ -56,16 +58,13 @@ const CaseStudies: React.FC = () => {
     },
   ];
 
-  // Group case studies by category
-  const categorizedStudies = caseStudies.reduce((acc, study) => {
-    if (!acc[study.category]) {
-      acc[study.category] = [];
-    }
-    acc[study.category].push(study);
-    return acc;
-  }, {} as Record<string, typeof caseStudies>);
+  // Extract unique categories
+  const categories = Array.from(new Set(caseStudies.map(study => study.category)));
 
-  const categories = Object.keys(categorizedStudies);
+  // Filter case studies based on active filter
+  const filteredStudies = activeFilter 
+    ? caseStudies.filter(study => study.category === activeFilter)
+    : caseStudies;
 
   return (
     <MainLayout>
@@ -75,33 +74,61 @@ const CaseStudies: React.FC = () => {
         backgroundImage="https://images.unsplash.com/photo-1551434678-e076c223a692"
       />
 
-      <section className="py-20">
+      <section className="py-16">
         <div className="section-container">
-          <div className="mb-16">
-            <p className="text-gray-600 text-lg max-w-3xl">
+          <div className="mb-8">
+            <p className="text-gray-600 text-lg max-w-3xl mb-8">
               Our AI solutions have delivered measurable results across industries. 
               Explore our case studies to see how we've helped organizations like yours overcome challenges and achieve their goals.
             </p>
+            
+            {/* Category filter */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              <button
+                onClick={() => setActiveFilter(null)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeFilter === null 
+                    ? 'bg-brand-primary text-white' 
+                    : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                All
+              </button>
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setActiveFilter(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    activeFilter === category 
+                      ? 'bg-brand-primary text-white' 
+                      : 'bg-gray-100 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {categories.map((category) => (
-            <div key={category} className="mb-16">
-              <h2 className="text-2xl font-semibold mb-8 pb-4 border-b">{category}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {categorizedStudies[category].map((study) => (
-                  <CaseStudyCard
-                    key={study.id}
-                    id={study.id}
-                    title={study.title}
-                    client={study.client}
-                    category={study.category}
-                    imageUrl={study.imageUrl}
-                    summary={study.summary}
-                  />
-                ))}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredStudies.map((study) => (
+              <CaseStudyCard
+                key={study.id}
+                id={study.id}
+                title={study.title}
+                client={study.client}
+                category={study.category}
+                imageUrl={study.imageUrl}
+                summary={study.summary}
+              />
+            ))}
+          </div>
+          
+          {filteredStudies.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No case studies found for the selected category.</p>
             </div>
-          ))}
+          )}
         </div>
       </section>
     </MainLayout>
