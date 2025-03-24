@@ -32,7 +32,7 @@ const About: React.FC = () => {
     {
       name: 'Michael Rodriguez',
       role: 'Head of AI Research',
-      bio: 'Michael oversees our AI research initiatives, focusing on developing innovative solutions that push the boundaries of what's possible.',
+      bio: 'Michael oversees our AI research initiatives, focusing on developing innovative solutions that push the boundaries of what\'s possible.',
       imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
       socialLinks: {
         linkedin: 'https://linkedin.com',

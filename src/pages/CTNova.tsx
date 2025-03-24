@@ -21,12 +21,12 @@ const CTNova: React.FC = () => {
     },
     {
       title: 'Enterprise-Grade Security',
-      description: 'Robust security features to protect your organization's data and content.',
+      description: 'Robust security features to protect your organization\'s data and content.',
       icon: <ShieldCheck size={24} />,
     },
     {
       title: 'Flexible Customization',
-      description: 'Tailor the platform to match your organization's branding and requirements.',
+      description: 'Tailor the platform to match your organization\'s branding and requirements.',
       icon: <UserCheck size={24} />,
     },
     {
