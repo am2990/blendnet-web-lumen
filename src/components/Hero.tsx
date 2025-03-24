@@ -127,7 +127,7 @@ const Hero: React.FC<HeroProps> = ({
         </svg>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes wave {
           0% {
             transform: translateX(0) scaleY(1);
@@ -252,7 +252,7 @@ const Hero: React.FC<HeroProps> = ({
           animation-delay: 5s;
           filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
         }
-      `}</style>
+      `}} />
     </div>
   );
 };
