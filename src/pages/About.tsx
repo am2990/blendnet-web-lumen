@@ -18,15 +18,6 @@ const About: React.FC = () => {
       }
     },
     {
-      "name": "Kashish Mittal",
-      "role": "Co-founder and COO",
-      "bio": "Kashish Mittal is a Principal Research Program Manager in the Technology for Emerging Markets group at Microsoft Research India. His work focuses on designing citizen-scale technologies, particularly developing Digital Public Good platforms using AI for large-scale societal impact. Prior to joining Microsoft, Kashish served as an Indian Administrative Service (IAS) officer, leading tech-driven developmental initiatives in India. He holds a B.Tech in Computer Science from IIT Delhi and is also a noted Indian Classical Vocalist.",
-      "imageUrl": "/images/team/Kashish_Photo.jpeg",
-      "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/kashishmittalias"
-      }
-    },
-    {
       "name": "John Huddle",
       "role": "Co-founder and Head of BD",
       "bio": "John Huddle is the Director of Market Development for APAC at SES Video, working with broadcasters and platform operators to embrace scalable and innovative broadcast solutions.",
@@ -42,6 +33,15 @@ const About: React.FC = () => {
       "imageUrl": "/images/team/Sanchit_Photo.png",
       "socialLinks": {
         "linkedin": "https://in.linkedin.com/in/sanchitsharma98"
+      }
+    },
+    {
+      "name": "Kashish Mittal",
+      "role": "Co-founder and COO",
+      "bio": "Kashish Mittal was a Principal Research Program Manager in the Technology for Emerging Markets group at Microsoft Research India. His work focuses on designing citizen-scale technologies, particularly developing Digital Public Good platforms using AI for large-scale societal impact. Prior to joining Microsoft, Kashish served as an Indian Administrative Service (IAS) officer, leading tech-driven developmental initiatives in India. He holds a B.Tech in Computer Science from IIT Delhi and is also a noted Indian Classical Vocalist.",
+      "imageUrl": "/images/team/Kashish_Photo.jpeg",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/kashishmittalias"
       }
     },
     {
