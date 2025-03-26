@@ -2,67 +2,55 @@
 import React from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import Hero from '@/components/Hero';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import BlurImage from '@/components/BlurImage';
+import YoutubeEmbed from '@/components/YoutubeEmbed';
 
-interface SolutionItemProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-}
-
-const SolutionItem: React.FC<SolutionItemProps> = ({ title, description, imageUrl, link }) => {
-  return (
-    <div className="group">
-      <div className="flex flex-col lg:flex-row gap-8 items-center bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-        <div className="w-full lg:w-1/3">
-          <div className="aspect-[4/3] overflow-hidden rounded-lg">
-            <BlurImage
-              src={imageUrl}
-              alt={title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </div>
-        <div className="w-full lg:w-2/3">
-          <h3 className="text-2xl font-semibold mb-3 group-hover:text-brand-primary transition-colors">{title}</h3>
-          <p className="text-gray-600 mb-6">{description}</p>
-          <Button asChild className="bg-brand-primary hover:bg-brand-primary/90">
-            <Link to={link}>Learn More</Link>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Solutions: React.FC = () => {
-  const solutionsList = [
+const SolutionsPage: React.FC = () => {
+  const solutions = [
     {
       title: "Learning Management System",
-      description: "Our comprehensive LMS solution provides a scalable, reliable, and secure platform for delivering training and educational content. Whether you're a university looking to enhance your online learning offerings, or a corporation seeking to upskill your workforce, our LMS offers the tools and features needed to create engaging learning experiences.",
+      description: "A comprehensive LMS solution for educational institutions and corporate training.",
       imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
       link: "/solutions/lms"
     },
     {
       title: "AI at Edge",
-      description: "Our Edge AI solutions bring machine learning capabilities directly to your edge devices, enabling real-time analysis and decision-making without relying on cloud connectivity. From industrial IoT applications to retail analytics and smart city infrastructure, our Edge AI platform delivers reliable performance where traditional cloud-based solutions fall short.",
+      description: "Cutting-edge AI solutions deployed at the edge for real-time processing and analytics.",
       imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
       link: "/solutions/ai-edge"
     },
     {
       title: "Skilling Tutor (Disha)",
-      description: "Disha is our revolutionary AI-powered skilling platform that acts as a personal tutor and career guide. It helps learners identify their strengths, address skill gaps, and chart a clear path toward their career goals using advanced machine learning algorithms to provide personalized recommendations.",
+      description: "AI-powered personalized tutoring system for skill development and career guidance.",
       imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
       link: "/solutions/disha"
     },
     {
       title: "Soft Skills with AI (ComuniQa)",
-      description: "ComuniQa is our innovative AI platform designed to help individuals and teams develop the soft skills essential for professional success. Using advanced natural language processing and conversational AI, it creates realistic scenarios where users can practice and refine their communication skills.",
+      description: "Interactive AI platform for developing essential soft skills and communication abilities.",
       imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       link: "/solutions/comuniqa"
+    }
+  ];
+  
+  const videos = [
+    {
+      videoId: "dQw4w9WgXcQ",
+      title: "Introduction to BlendNet AI Solutions"
+    },
+    {
+      videoId: "jNQXAC9IVRw",
+      title: "CT Nova Platform Showcase"
+    },
+    {
+      videoId: "jhFDyDgMVUI",
+      title: "AI at the Edge: Use Cases & Benefits"
+    },
+    {
+      videoId: "_GuOjXYl5ew",
+      title: "Future of AI in Education"
     }
   ];
 
@@ -70,42 +58,67 @@ const Solutions: React.FC = () => {
     <MainLayout>
       <Hero
         title="Our Solutions"
-        subtitle="Discover our comprehensive suite of AI-powered solutions designed to transform education and skill development."
+        subtitle="Innovative AI-powered solutions designed to transform your organization"
+        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
       />
 
       <section className="py-16">
         <div className="section-container">
-          <div className="mb-12">
-            <p className="text-gray-600 text-lg max-w-3xl">
-              At BlendNet, we leverage the latest advancements in artificial intelligence to create 
-              innovative solutions for learning, skill development, and business transformation. 
-              Our products are designed to be scalable, secure, and adaptable to your specific needs.
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="mb-4">Comprehensive AI Solutions</h2>
+            <p className="text-gray-600 text-lg">
+              Discover our suite of AI-powered solutions designed to address specific business challenges
+              and drive meaningful outcomes for your organization.
             </p>
           </div>
 
-          <div className="space-y-8">
-            {solutionsList.map((solution, index) => (
-              <SolutionItem
-                key={index}
-                title={solution.title}
-                description={solution.description}
-                imageUrl={solution.imageUrl}
-                link={solution.link}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+            {solutions.map((solution, index) => (
+              <div key={index} className="group bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <BlurImage
+                    src={solution.imageUrl}
+                    alt={solution.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-2 text-brand-primary group-hover:text-brand-secondary transition-colors">{solution.title}</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">{solution.description}</p>
+                  <Button asChild className="mt-auto bg-brand-primary hover:bg-brand-primary/90">
+                    <Link to={solution.link}>Learn More</Link>
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="py-16 bg-brand-primary/5">
-        <div className="section-container">
+          {/* Video Section */}
+          <div className="bg-brand-accent rounded-lg p-8 md:p-12 mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="mb-4">Watch Our Solutions in Action</h2>
+              <p className="text-gray-600 text-lg">
+                See our AI solutions at work through these informative videos showcasing real-world applications and benefits.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {videos.map((video, index) => (
+                <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+                  <YoutubeEmbed videoId={video.videoId} title={video.title} />
+                  <h3 className="text-lg font-semibold mt-4 mb-2">{video.title}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Need a Custom Solution?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              Our team of experts can help you develop customized AI solutions tailored to your specific business needs.
+            <h3 className="text-2xl font-semibold mb-6">Ready to Transform Your Business?</h3>
+            <p className="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
+              Contact us today to discuss how our AI solutions can address your specific challenges and drive growth for your organization.
             </p>
             <Button asChild size="lg" className="bg-brand-primary hover:bg-brand-primary/90">
-              <Link to="/contact">Contact Our Team</Link>
+              <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>
         </div>
@@ -114,4 +127,4 @@ const Solutions: React.FC = () => {
   );
 };
 
-export default Solutions;
+export default SolutionsPage;

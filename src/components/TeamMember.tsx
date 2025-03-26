@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import BlurImage from './BlurImage';
+import { Button } from './ui/button';
 
 interface TeamMemberProps {
   name: string;
@@ -21,6 +22,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   imageUrl,
   socialLinks,
 }) => {
+  const [expanded, setExpanded] = useState(false);
+  
   return (
     <div className="group">
       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
@@ -34,7 +37,19 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <div className="p-6">
           <h3 className="text-xl font-semibold mb-1">{name}</h3>
           <p className="text-brand-secondary font-medium mb-3">{role}</p>
-          <p className="text-gray-600 line-clamp-3 mb-4">{bio}</p>
+          
+          <div className={`text-gray-600 ${expanded ? '' : 'line-clamp-3'} mb-4`}>{bio}</div>
+          
+          {bio.length > 180 && (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-brand-primary hover:text-brand-secondary mb-3"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? 'Show Less' : 'Read More'}
+            </Button>
+          )}
           
           {socialLinks && (
             <div className="flex gap-3">

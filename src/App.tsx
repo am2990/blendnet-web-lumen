@@ -22,6 +22,14 @@ import AIEdge from "./pages/solutions/AIEdge";
 import Disha from "./pages/solutions/Disha";
 import ComuniQa from "./pages/solutions/ComuniQa";
 
+// Case Study Pages
+import RetailTransformation from "./pages/case-studies/RetailTransformation";
+import HealthcareEfficiency from "./pages/case-studies/HealthcareEfficiency";
+import FinancialInsights from "./pages/case-studies/FinancialInsights";
+import ManufacturingOptimization from "./pages/case-studies/ManufacturingOptimization";
+import SupplyChainIntelligence from "./pages/case-studies/SupplyChainIntelligence";
+import CustomerExperience from "./pages/case-studies/CustomerExperience";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -47,6 +55,14 @@ const App = () => (
           <Route path="/solutions/ai-edge" element={<AIEdge />} />
           <Route path="/solutions/disha" element={<Disha />} />
           <Route path="/solutions/comuniqa" element={<ComuniQa />} />
+          
+          {/* Case Study Routes */}
+          <Route path="/case-studies/retail-transformation" element={<RetailTransformation />} />
+          <Route path="/case-studies/healthcare-efficiency" element={<HealthcareEfficiency />} />
+          <Route path="/case-studies/financial-insights" element={<FinancialInsights />} />
+          <Route path="/case-studies/manufacturing-optimization" element={<ManufacturingOptimization />} />
+          <Route path="/case-studies/supply-chain-intelligence" element={<SupplyChainIntelligence />} />
+          <Route path="/case-studies/customer-experience" element={<CustomerExperience />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

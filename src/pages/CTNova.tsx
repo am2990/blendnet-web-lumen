@@ -196,7 +196,7 @@ const CTNova: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg p-8 hover-scale">
               <div className="text-brand-secondary font-medium mb-2">Basic</div>
-              <h3 className="text-3xl font-bold mb-4">$4,999</h3>
+              <h3 className="text-3xl font-bold mb-4">Limited Support</h3>
               <p className="text-gray-600 mb-6">Perfect for small organizations getting started with digital learning.</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
@@ -223,8 +223,8 @@ const CTNova: React.FC = () => {
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-secondary text-white px-4 py-1 rounded-full text-sm font-medium">
                 Most Popular
               </div>
-              <div className="text-brand-secondary font-medium mb-2">Professional</div>
-              <h3 className="text-3xl font-bold mb-4">$9,999</h3>
+              <div className="text-brand-secondary font-medium mb-2">Premium</div>
+              <h3 className="text-3xl font-bold mb-4">Priority Support</h3>
               <p className="text-gray-600 mb-6">Advanced features for growing organizations with diverse learning needs.</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
@@ -253,7 +253,7 @@ const CTNova: React.FC = () => {
 
             <div className="bg-white rounded-lg shadow-lg p-8 hover-scale">
               <div className="text-brand-secondary font-medium mb-2">Enterprise</div>
-              <h3 className="text-3xl font-bold mb-4">Custom</h3>
+              <h3 className="text-3xl font-bold mb-4">Custom Features</h3>
               <p className="text-gray-600 mb-6">Tailored solutions for large organizations with complex requirements.</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
