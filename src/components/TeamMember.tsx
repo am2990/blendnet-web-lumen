@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import BlurImage from './BlurImage';
 import { Button } from './ui/button';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface TeamMemberProps {
   name: string;
@@ -23,6 +24,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   socialLinks,
 }) => {
   const [expanded, setExpanded] = useState(false);
+
+  // Always show the Read More button regardless of bio length
+  // This ensures consistency across all team member cards
   
   return (
     <div className="group">
@@ -40,16 +44,22 @@ const TeamMember: React.FC<TeamMemberProps> = ({
           
           <div className={`text-gray-600 ${expanded ? '' : 'line-clamp-3'} mb-4`}>{bio}</div>
           
-          {bio.length > 180 && (
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-brand-primary hover:text-brand-secondary mb-3"
-              onClick={() => setExpanded(!expanded)}
-            >
-              {expanded ? 'Show Less' : 'Read More'}
-            </Button>
-          )}
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="text-brand-primary hover:text-brand-secondary mb-3 flex items-center gap-1"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? (
+              <>
+                Show Less <ChevronUp size={16} />
+              </>
+            ) : (
+              <>
+                Read More <ChevronDown size={16} />
+              </>
+            )}
+          </Button>
           
           {socialLinks && (
             <div className="flex gap-3">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, UserCheck, BarChart, Award, Database, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,7 +48,7 @@ const CTNova: React.FC = () => {
         subtitle="Empower your organization with a modern learning platform built on Microsoft Community Training and running natively on Azure."
         ctaText="Request a Demo"
         ctaLink="#contact"
-        backgroundImage="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33"
+        backgroundImage="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
       />
 
       {/* Main Section */}
@@ -102,7 +101,7 @@ const CTNova: React.FC = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <BlurImage
-                  src="https://images.unsplash.com/photo-1581090700227-8e3b68303d4a"
+                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
                   alt="CT Nova on Azure"
                   className="w-full h-auto"
                 />
